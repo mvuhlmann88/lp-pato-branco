@@ -198,10 +198,10 @@ ul  { list-style: none; }
 .hero-bg-wrap {
   position: absolute;
   inset: -30px;
-  background-image: url('https://oferta.palmasnet.com.br/wp-content/uploads/2025/09/plamas-LP.webp');
+  background-image: url('../img/hero-bg.jpg');
   background-size: cover;
   background-position: center 55%;
-  filter: blur(7px) brightness(.6);
+  filter: blur(3px) brightness(.70);
   transform: scale(1.06);
 }
 
@@ -571,7 +571,7 @@ ul  { list-style: none; }
 
 .includes-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   max-width: 860px;
   margin: 0 auto;
