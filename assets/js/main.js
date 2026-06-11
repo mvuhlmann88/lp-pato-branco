@@ -7,11 +7,11 @@
   'use strict';
 
   /* ── Config ────────────────────────────────────────────── */
-  const WA_NUMBER  = '554734442071';
+  const WA_NUMBER = '554734442071';
   const WA_MESSAGE = encodeURIComponent(
     'Olá! Vim pela página de São Francisco do Sul e quero contratar a internet da Palmasnet. Pode me ajudar?'
   );
-  const WA_BASE    = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
+  const WA_BASE = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
   /* ── WhatsApp links ─────────────────────────────────────── */
   // Inject correct WA link in every [data-wa] element
@@ -19,9 +19,9 @@
     const plan = el.getAttribute('data-wa');
     let msg = 'Olá! Vim pela página de São Francisco do Sul e quero contratar a internet da Palmasnet.';
 
-    if (plan === '500')   msg = 'Olá! Vim pela LP de SFS e quero saber mais sobre o plano de 500 Mega por R$ 109,90.';
-    if (plan === '800')   msg = 'Olá! Vim pela LP de SFS e tenho interesse no plano de 800 Mega por R$ 119,90.';
-    if (plan === 'cam')   msg = 'Olá! Vim pela LP de SFS e quero saber mais sobre o plano de 800 Mega com câmera por R$ 139,90.';
+    if (plan === '500') msg = 'Olá! Vim pela LP de SFS e quero saber mais sobre o plano de 500 Mega por R$ 109,90.';
+    if (plan === '800') msg = 'Olá! Vim pela LP de SFS e tenho interesse no plano de 800 Mega por R$ 119,90.';
+    if (plan === 'cam') msg = 'Olá! Vim pela LP de SFS e quero saber mais sobre o plano de 800 Mega com câmera por R$ 139,90.';
     if (plan === 'combo') msg = 'Olá! Vim pela LP de SFS e quero saber mais sobre o Combo São Chico (800 Mega + 50 GB 5G) por R$ 169,90.';
     if (plan === 'geral') msg = 'Olá! Vim pela página de São Francisco do Sul e quero contratar a internet da Palmasnet.';
 
@@ -64,6 +64,10 @@
     }, { threshold: 0.12 });
 
     revealEls.forEach(function (el) { observer.observe(el); });
+    /* Fallback — força visibilidade após 800ms */
+    setTimeout(function () {
+      revealEls.forEach(function (el) { el.classList.add('visible'); });
+    }, 800);
   } else {
     // Fallback: show everything
     revealEls.forEach(function (el) { el.classList.add('visible'); });

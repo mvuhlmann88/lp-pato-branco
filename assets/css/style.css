@@ -435,6 +435,13 @@ ul  { list-style: none; }
   position: relative;
   overflow: hidden;
 }
+.combo-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,204,0,.04);
+  border: 1px solid rgba(255,204,0,.08);
+  pointer-events: none;
+}
 .combo-bg-accent {
   position: absolute;
   inset: 0;
